@@ -1,4 +1,4 @@
 **{successResult.heading}**
 {for event in successResult.items}
-- {event.formattedEvent}
+{event.formattedEvent}
 {endfor}
