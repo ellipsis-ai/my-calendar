@@ -5,7 +5,7 @@ const moment = require('moment-timezone');
 moment.tz.setDefault(ellipsis.userInfo.timeZone || ellipsis.teamInfo.timeZone);
 const gcal = require('google-calendar');
 const cal = new gcal.GoogleCalendar(ellipsis.accessTokens.googleCalendar);
-const Formatter = ellipsis.require('ellipsis-cal-date-format@beta');
+const Formatter = ellipsis.require('ellipsis-cal-date-format@0.0.13');
 const eventlib = require('eventlib');
 
 list();
