@@ -5,7 +5,8 @@ const moment = require('moment-timezone');
 moment.tz.setDefault(ellipsis.userInfo.timeZone || ellipsis.teamInfo.timeZone);
 const gcal = require('google-calendar');
 const cal = new gcal.GoogleCalendar(ellipsis.accessTokens.googleCalendar);
-const Formatter = require('ellipsis-cal-date-format');
+const Formatter = ellipsis.require('ellipsis-cal-date-format@0.0.13');
+const eventlib = require('eventlib');
 
 list();
 
@@ -31,9 +32,9 @@ function list() {
     } else {
       const tz = res.timeZone || ellipsis.teamInfo.timeZone;
       moment.tz.setDefault(tz);
-      const items = res.items.filter((ea) => {
+      const items = eventlib.filterDeclined(res.items.filter((ea) => {
         return moment(ea.start.dateTime).isAfter(now.clone().add(2, 'minutes').add(30, 'seconds'))
-      });
+      }));
       if (items.length === 0) {
         if (ellipsis.event.originalEventType === "scheduled") {
           ellipsis.noResponse();

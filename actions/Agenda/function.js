@@ -4,7 +4,8 @@ function(ellipsis) {
 const moment = require('moment-timezone');
 const gcal = require('google-calendar');
 const cal = new gcal.GoogleCalendar(ellipsis.accessTokens.googleCalendar);
-const Formatter = require('ellipsis-cal-date-format');
+const Formatter = ellipsis.require('ellipsis-cal-date-format@0.0.13');
+const eventlib = require('eventlib');
 
 cal.calendars.get("primary", (err, res) => {
   if (err) {
@@ -33,7 +34,7 @@ function list(tz) {
     } else if (!res.items) {
       ellipsis.error("There was a problem fetching your calendar. Google Calendar may be experiencing a hiccup.");
     } else {
-      const items = res.items.slice();
+      const items = eventlib.filterDeclined(res.items.slice());
       let heading = "";
       if (items.length === 0) {
         heading = "🎉 There’s nothing on your calendar for the rest of the day.";
