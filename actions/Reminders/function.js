@@ -1,7 +1,5 @@
 function(ellipsis) {
-  "use strict";
-
-const moment = require('moment-timezone');
+  const moment = require('moment-timezone');
 moment.tz.setDefault(ellipsis.userInfo.timeZone || ellipsis.teamInfo.timeZone);
 const gcal = require('google-calendar');
 const cal = new gcal.GoogleCalendar(ellipsis.accessTokens.googleCalendar);

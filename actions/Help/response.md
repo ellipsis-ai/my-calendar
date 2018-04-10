@@ -4,3 +4,4 @@ Ellipsis can show you what's happening on your calendar today, and send reminder
 - `what's on my calendar today` — show your agenda (list all events) for the rest of the day
 - `what's on my calendar now` — show any events happening now or in the next 10 minutes
 - `setup my calendar` — set up the skill to send you your agenda each weekday, and send you reminders a few minutes before events begin
+- `stop my calendar` — turn off the scheduled agenda and reminders

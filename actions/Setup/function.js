@@ -1,7 +1,5 @@
 function(whenToAnnounce, shouldRemind, ellipsis) {
-  "use strict";
-
-const gcal = require('google-calendar');
+  const gcal = require('google-calendar');
 const cal = new gcal.GoogleCalendar(ellipsis.accessTokens.googleCalendar);
 const EllipsisApi = ellipsis.require('ellipsis-api');
 const api = new EllipsisApi(ellipsis).actions;

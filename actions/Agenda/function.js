@@ -1,7 +1,5 @@
 function(ellipsis) {
-  "use strict";
-
-const moment = require('moment-timezone');
+  const moment = require('moment-timezone');
 const gcal = require('google-calendar');
 const cal = new gcal.GoogleCalendar(ellipsis.accessTokens.googleCalendar);
 const Formatter = ellipsis.require('ellipsis-cal-date-format@0.0.13');
