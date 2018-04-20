@@ -31,7 +31,7 @@ function list() {
       const tz = res.timeZone || ellipsis.teamInfo.timeZone;
       moment.tz.setDefault(tz);
       const items = eventlib.filterDeclined(res.items.filter((ea) => {
-        return moment(ea.start.dateTime).isAfter(now.clone().add(2, 'minutes').add(30, 'seconds'))
+        return ellipsis.event.originalEventType !== 'scheduled' || moment(ea.start.dateTime).isAfter(now.clone().add(2, 'minutes').add(50, 'seconds'))
       }));
       if (items.length === 0) {
         if (ellipsis.event.originalEventType === "scheduled") {
