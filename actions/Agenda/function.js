@@ -1,6 +1,6 @@
 function(ellipsis) {
   const moment = require('moment-timezone');
-const Formatter = ellipsis.require('ellipsis-cal-date-format@0.0.13');
+const Formatter = ellipsis.require('ellipsis-cal-date-format@0.0.14');
 const eventlib = require('eventlib');
 const calLib = require('callib');
 let calTz, now;
