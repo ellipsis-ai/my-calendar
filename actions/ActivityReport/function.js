@@ -24,7 +24,7 @@ calLib.listPrimaryCal(ellipsis, (tz) => {
   const firstDay = min.format("dddd, MMMM D");
   const lastDay = max.clone().subtract(1, 'hour').format("dddd, MMMM D");
   ellipsis.success(`
-Here is your report for ${firstDay} to ${lastDay}.
+Here is your activity report for ${firstDay} to ${lastDay}.
 
 **${formatHeading(activity)}**
 
@@ -33,7 +33,10 @@ ${formatActivity(activity)}
 });
 
 function measureItem(activity, item) {
-  const otherParticipantCount = item.attendees ? item.attendees.filter((ea) => !ea.self).length : 0;
+  const otherParticipants = item.attendees ? item.attendees.filter((ea) => {
+    return !ea.self && !ea.resource;
+  }) : [];
+  const otherParticipantCount = otherParticipants.length;
   if (otherParticipantCount > 0) {
     const start = item.start.dateTime;
     const end = item.end.dateTime;
@@ -49,6 +52,7 @@ function measureItem(activity, item) {
     }
   }
   activity.eventCount += 1;
+  activity.participants = activity.participants.concat(otherParticipants);
   return activity;
 }
 
@@ -63,11 +67,12 @@ function formatHeading(activity) {
 }
 
 function formatActivity(activity) {
+  const otherParticipantCount = activity.getParticipantCount();
   if (activity.eventCount === 0) {
     return "";
   } else if (activity.eventCount === 1) {
     if (activity.groupMeetingCount > 0) {
-      return `It was a group meeting that lasted ${formatMinutes(activity.minutesInGroups)}.`
+      return `It was a group meeting that lasted ${formatMinutes(activity.minutesInGroups)} with ${otherParticipantCount} other people.`
     } else if (activity.oneOnOneMeetingCount > 0) {
       return `It was a one-on-one meeting that lasted ${formatMinutes(activity.minutesInOneOnOnes)}.`
     } else {
@@ -85,6 +90,12 @@ function formatActivity(activity) {
       list.push(`There was a one-on-one that lasted ${formatMinutes(activity.minutesInOneOnOnes)}`);
     } else if (activity.oneOnOneMeetingCount > 1) {
       list.push(`There were ${activity.oneOnOneMeetingCount} one-on-ones that lasted a total of ${formatMinutes(activity.minutesInOneOnOnes)}`);
+    }
+    
+    if (otherParticipantCount === 1) {
+      list.push(`You only met with one other person throughout the week.`);
+    } else if (otherParticipantCount > 1) {
+      list.push(`You met with ${otherParticipantCount} other people throughout the week.`);
     }
     
     if (list.length > 0) {
