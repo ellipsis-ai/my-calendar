@@ -2,5 +2,6 @@
   "exportId" : "VY-CO7xWRUyUt_nFOCKdiA",
   "name" : "ActivityReport",
   "forcePrivateResponse" : false,
+  "canBeMemoized" : false,
   "isDataType" : false
 }

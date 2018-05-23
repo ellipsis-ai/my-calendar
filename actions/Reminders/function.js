@@ -28,7 +28,8 @@ callib.listPrimaryCal(ellipsis, (tz) => {
       });
     }
   } else {
-    ellipsis.success({
+    const eventsWithOtherAttendees = items.filter((item) => item.attendees && item.attendees.some((attendee) => !attendee.self));
+    const result = {
       hasItems: true,
       heading: items.length > 1 ?
         `Reminder: there are ${items.length} events on your calendar.` :
@@ -38,7 +39,40 @@ callib.listPrimaryCal(ellipsis, (tz) => {
           formattedEvent: Formatter.formatEvent(event, calTz, now.format(Formatter.formats.YMD), { details: true })
         });
       })
-    });
+    };
+    let options;
+    if (eventsWithOtherAttendees.length > 0) {
+      options = {
+        choices: [{
+          label: "📣 Running late",
+          actionName: "Respond",
+          args: [{
+            name: "events",
+            value: JSON.stringify(items)
+          }, {
+            name: "comment",
+            value: "Sorry, I'm running late"
+          }, {
+            name: "responseStatus",
+            value: "accepted"
+          }]
+        }, {
+          label: "❌ Decline",
+          actionName: "Respond",
+          args: [{
+            name: "events",
+            value: JSON.stringify(items)
+          }, {
+            name: "comment",
+            value: ""
+          }, {
+            name: "responseStatus",
+            value: "declined"
+          }]
+        }]
+      };
+    }
+    ellipsis.success(result, options);
   }  
 });
 }

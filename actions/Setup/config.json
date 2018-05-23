@@ -2,5 +2,6 @@
   "exportId" : "ioHMv3b3T4utFwwH0cwjLg",
   "name" : "Setup",
   "forcePrivateResponse" : false,
+  "canBeMemoized" : false,
   "isDataType" : false
 }

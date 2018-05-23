@@ -1,4 +1,24 @@
 [ {
+  "exportId" : "BhnzFVOqR4i42wIJh2d3OQ",
+  "name" : "comment",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "Attendance comment",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "IMSdxdXBSpWTCh7_6v4wXg",
+  "name" : "events",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "Events array",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
   "exportId" : "_lpHYaeKQfqd4Gghk3fhGg",
   "name" : "whenToAnnounce",
   "paramType" : {
@@ -6,6 +26,16 @@
     "name" : "Text"
   },
   "question" : "What time should I send you your agenda for the day? e.g. “9 AM” or “10 AM Eastern time”, or “none” if you don’t want an agenda",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "tP6G8IYQRDuuIXiwDFW--A",
+  "name" : "responseStatus",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "Response status",
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
