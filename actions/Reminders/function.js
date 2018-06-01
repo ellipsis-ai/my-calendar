@@ -69,6 +69,16 @@ callib.listPrimaryCal(ellipsis, (tz) => {
             name: "responseStatus",
             value: "declined"
           }]
+        },  {
+          label: "❌ Decline with note",
+          actionName: "RespondWithComment",
+          args: [{
+            name: "events",
+            value: JSON.stringify(items)
+          }, {
+            name: "responseStatus",
+            value: "declined"
+          }]
         }]
       };
     }

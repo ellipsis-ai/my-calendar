@@ -19,6 +19,16 @@
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
+  "exportId" : "Py11EiN0Rv2bk99gJgwCIA",
+  "name" : "responseStatus",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What is the value for `responseStatus`?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
   "exportId" : "_lpHYaeKQfqd4Gghk3fhGg",
   "name" : "whenToAnnounce",
   "paramType" : {
@@ -29,6 +39,16 @@
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
+  "exportId" : "po_ivX57QJyUS4jxpjWhOg",
+  "name" : "customNote",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What would you like to say?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
   "exportId" : "tP6G8IYQRDuuIXiwDFW--A",
   "name" : "responseStatus",
   "paramType" : {
@@ -36,6 +56,16 @@
     "name" : "Text"
   },
   "question" : "Response status",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "tR7jfTcETWKxm0of71YaVQ",
+  "name" : "events",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What is the value for `events`?",
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
