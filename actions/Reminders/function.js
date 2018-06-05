@@ -3,21 +3,21 @@ function(ellipsis) {
 const Formatter = ellipsis.require('ellipsis-cal-date-format@0.0.14');
 const eventlib = require('eventlib');
 const callib = require('callib');
-let now, calTz;
+let now, min, max, calTz;
 
 callib.listPrimaryCal(ellipsis, (tz) => {
   calTz = tz;
   moment.tz.setDefault(calTz);
   now = moment();
-  const min = now.clone();
-  const max = now.clone().add(8, 'minutes');
+  min = now.clone().startOf('minute').add(2, 'minutes');
+  max = min.clone().add(5, 'minutes');
   return {
     min: min.toISOString(),
     max: max.toISOString()
   };
 }, (resultItems) => {
   const items = eventlib.filterDeclined(resultItems.filter((ea) => {
-    return ellipsis.event.originalEventType !== 'scheduled' || moment(ea.start.dateTime).isAfter(now.clone().add(2, 'minutes').add(50, 'seconds'))
+    return ellipsis.event.originalEventType !== 'scheduled' || moment(ea.start.dateTime).isSameOrAfter(min)
   }));
   if (items.length === 0) {
     if (ellipsis.event.originalEventType === "scheduled") {
