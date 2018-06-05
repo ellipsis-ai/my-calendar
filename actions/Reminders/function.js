@@ -9,7 +9,7 @@ callib.listPrimaryCal(ellipsis, (tz) => {
   calTz = tz;
   moment.tz.setDefault(calTz);
   now = moment();
-  min = now.clone().startOf('minute').add(2, 'minutes');
+  min = now.clone().startOf('minute').add(5, 'minutes');
   max = min.clone().add(5, 'minutes');
   return {
     min: min.toISOString(),
