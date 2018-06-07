@@ -2,5 +2,6 @@
   "exportId" : "J0uB9LvZTo6_L-spEBrtqg",
   "name" : "Help",
   "forcePrivateResponse" : false,
+  "canBeMemoized" : false,
   "isDataType" : false
 }

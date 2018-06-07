@@ -1,4 +1,64 @@
 [ {
+  "exportId" : "2pyz9b3gSUyWEFo_EwmIQg",
+  "name" : "nextAction",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "Next action name",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "62WXz4S6SYWGwRbYLCeVzg",
+  "name" : "responseStatus",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "Response status",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "BhnzFVOqR4i42wIJh2d3OQ",
+  "name" : "comment",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "Attendance comment",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "IMSdxdXBSpWTCh7_6v4wXg",
+  "name" : "eventId",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "Event ID",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "Py11EiN0Rv2bk99gJgwCIA",
+  "name" : "responseStatus",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What is the value for `responseStatus`?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "Z-5xY-d7QPaMpEjJzCPTvA",
+  "name" : "comment",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "Comment",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
   "exportId" : "_lpHYaeKQfqd4Gghk3fhGg",
   "name" : "whenToAnnounce",
   "paramType" : {
@@ -6,6 +66,46 @@
     "name" : "Text"
   },
   "question" : "What time should I send you your agenda for the day? e.g. “9 AM” or “10 AM Eastern time”, or “none” if you don’t want an agenda",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "lkhuKr7XSlKomEHflWWAHg",
+  "name" : "events",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "Enter an array of event objects",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "po_ivX57QJyUS4jxpjWhOg",
+  "name" : "customNote",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What would you like to say?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "tP6G8IYQRDuuIXiwDFW--A",
+  "name" : "responseStatus",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "Response status",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "tR7jfTcETWKxm0of71YaVQ",
+  "name" : "eventId",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "Event ID",
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
