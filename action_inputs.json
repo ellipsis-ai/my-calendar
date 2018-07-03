@@ -39,6 +39,26 @@
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
+  "exportId" : "aVKMqzD-Tm24fKZ_BdBrsA",
+  "name" : "keywords",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "Filter for what keywords?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "eCZBfXRxTVWerQ-Ty3Sdcg",
+  "name" : "",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What is the value for ``?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
   "exportId" : "po_ivX57QJyUS4jxpjWhOg",
   "name" : "customNote",
   "paramType" : {
@@ -46,6 +66,16 @@
     "name" : "Text"
   },
   "question" : "What would you like to say?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "q-SNEXFAT4mPRYsKC9mzyg",
+  "name" : "calendarId",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "Which calendar ID?",
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
