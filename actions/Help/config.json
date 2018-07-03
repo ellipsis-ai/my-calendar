@@ -3,5 +3,6 @@
   "name" : "Help",
   "forcePrivateResponse" : false,
   "canBeMemoized" : false,
-  "isDataType" : false
+  "isDataType" : false,
+  "isTest" : false
 }
