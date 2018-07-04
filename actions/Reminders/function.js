@@ -3,21 +3,21 @@ function(ellipsis) {
 const Formatter = ellipsis.require('ellipsis-cal-date-format@0.0.14');
 const eventlib = require('eventlib');
 const callib = require('callib');
-let now, calTz;
+let now, min, max, calTz;
 
 callib.listPrimaryCal(ellipsis, (tz) => {
   calTz = tz;
   moment.tz.setDefault(calTz);
   now = moment();
-  const min = now.clone();
-  const max = now.clone().add(8, 'minutes');
+  min = now.clone().startOf('minute').add(5, 'minutes');
+  max = min.clone().add(5, 'minutes');
   return {
     min: min.toISOString(),
     max: max.toISOString()
   };
 }, (resultItems) => {
   const items = eventlib.filterDeclined(resultItems.filter((ea) => {
-    return ellipsis.event.originalEventType !== 'scheduled' || moment(ea.start.dateTime).isAfter(now.clone().add(2, 'minutes').add(50, 'seconds'))
+    return ellipsis.event.originalEventType !== 'scheduled' || moment(ea.start.dateTime).isSameOrAfter(min)
   }));
   if (items.length === 0) {
     if (ellipsis.event.originalEventType === "scheduled") {
@@ -28,7 +28,8 @@ callib.listPrimaryCal(ellipsis, (tz) => {
       });
     }
   } else {
-    ellipsis.success({
+    const eventsWithOtherAttendees = items.filter((item) => item.attendees && item.attendees.some((attendee) => !attendee.self));
+    const result = {
       hasItems: true,
       heading: items.length > 1 ?
         `Reminder: there are ${items.length} events on your calendar.` :
@@ -38,7 +39,50 @@ callib.listPrimaryCal(ellipsis, (tz) => {
           formattedEvent: Formatter.formatEvent(event, calTz, now.format(Formatter.formats.YMD), { details: true })
         });
       })
-    });
+    };
+    let options;
+    if (eventsWithOtherAttendees.length > 0) {
+      options = {
+        choices: [{
+          label: "📣 Running late",
+          actionName: "Respond",
+          args: [{
+            name: "events",
+            value: JSON.stringify(items)
+          }, {
+            name: "comment",
+            value: "Sorry, I'm running late"
+          }, {
+            name: "responseStatus",
+            value: "accepted"
+          }]
+        }, {
+          label: "❌ Decline",
+          actionName: "Respond",
+          args: [{
+            name: "events",
+            value: JSON.stringify(items)
+          }, {
+            name: "comment",
+            value: ""
+          }, {
+            name: "responseStatus",
+            value: "declined"
+          }]
+        },  {
+          label: "❌ Decline with note",
+          actionName: "RespondWithComment",
+          args: [{
+            name: "events",
+            value: JSON.stringify(items)
+          }, {
+            name: "responseStatus",
+            value: "declined"
+          }]
+        }]
+      };
+    }
+    ellipsis.success(result, options);
   }  
 });
 }

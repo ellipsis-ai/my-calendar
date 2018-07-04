@@ -2,5 +2,7 @@
   "exportId" : "V-LAjv1AS4CoFimMANnxpg",
   "name" : "Deactivate",
   "forcePrivateResponse" : false,
-  "isDataType" : false
+  "canBeMemoized" : false,
+  "isDataType" : false,
+  "isTest" : false
 }

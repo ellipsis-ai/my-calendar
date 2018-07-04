@@ -2,5 +2,7 @@
   "exportId" : "SBH4IfDzTGO8P7kV02yECw",
   "name" : "Reminders",
   "forcePrivateResponse" : false,
-  "isDataType" : false
+  "canBeMemoized" : false,
+  "isDataType" : false,
+  "isTest" : false
 }

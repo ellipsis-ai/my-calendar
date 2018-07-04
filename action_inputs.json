@@ -1,4 +1,34 @@
 [ {
+  "exportId" : "BhnzFVOqR4i42wIJh2d3OQ",
+  "name" : "comment",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "Attendance comment",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "IMSdxdXBSpWTCh7_6v4wXg",
+  "name" : "events",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "Events array",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "Py11EiN0Rv2bk99gJgwCIA",
+  "name" : "responseStatus",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What is the value for `responseStatus`?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
   "exportId" : "_lpHYaeKQfqd4Gghk3fhGg",
   "name" : "whenToAnnounce",
   "paramType" : {
@@ -6,6 +36,66 @@
     "name" : "Text"
   },
   "question" : "What time should I send you your agenda for the day? e.g. “9 AM” or “10 AM Eastern time”, or “none” if you don’t want an agenda",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "aVKMqzD-Tm24fKZ_BdBrsA",
+  "name" : "keywords",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "Filter for what keywords?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "eCZBfXRxTVWerQ-Ty3Sdcg",
+  "name" : "",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What is the value for ``?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "po_ivX57QJyUS4jxpjWhOg",
+  "name" : "customNote",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What would you like to say?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "q-SNEXFAT4mPRYsKC9mzyg",
+  "name" : "calendarId",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "Which calendar ID?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "tP6G8IYQRDuuIXiwDFW--A",
+  "name" : "responseStatus",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "Response status",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "tR7jfTcETWKxm0of71YaVQ",
+  "name" : "events",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What is the value for `events`?",
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {

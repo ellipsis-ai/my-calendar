@@ -2,5 +2,7 @@
   "exportId" : "BXUYJotxSaKz3QqZ_zSd-w",
   "name" : "Agenda",
   "forcePrivateResponse" : false,
-  "isDataType" : false
+  "canBeMemoized" : false,
+  "isDataType" : false,
+  "isTest" : false
 }
