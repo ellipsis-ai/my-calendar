@@ -19,6 +19,16 @@
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
+  "exportId" : "JNUlcojETbOjaCQB7SIFNA",
+  "name" : "includeFollowingWeek",
+  "paramType" : {
+    "exportId" : "Yes/No",
+    "name" : "Yes/No"
+  },
+  "question" : "Should the following week be included as well (this week and next week)?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
   "exportId" : "Py11EiN0Rv2bk99gJgwCIA",
   "name" : "responseStatus",
   "paramType" : {
@@ -39,23 +49,13 @@
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
-  "exportId" : "aVKMqzD-Tm24fKZ_BdBrsA",
-  "name" : "keywords",
+  "exportId" : "iZNLolNgR8CpJdf3BqBGNw",
+  "name" : "filterOriginal",
   "paramType" : {
     "exportId" : "Text",
     "name" : "Text"
   },
-  "question" : "Filter for what keywords?",
-  "isSavedForTeam" : false,
-  "isSavedForUser" : false
-}, {
-  "exportId" : "eCZBfXRxTVWerQ-Ty3Sdcg",
-  "name" : "",
-  "paramType" : {
-    "exportId" : "Text",
-    "name" : "Text"
-  },
-  "question" : "What is the value for ``?",
+  "question" : "What keywords should I use as a filter?",
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
@@ -66,16 +66,6 @@
     "name" : "Text"
   },
   "question" : "What would you like to say?",
-  "isSavedForTeam" : false,
-  "isSavedForUser" : false
-}, {
-  "exportId" : "q-SNEXFAT4mPRYsKC9mzyg",
-  "name" : "calendarId",
-  "paramType" : {
-    "exportId" : "Text",
-    "name" : "Text"
-  },
-  "question" : "Which calendar ID?",
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
@@ -106,6 +96,16 @@
     "name" : "Yes/No"
   },
   "question" : "Would you like me to send you a reminder before each event begins?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "wd0xwWpISaihzIo5w0ySFA",
+  "name" : "calendar",
+  "paramType" : {
+    "exportId" : "YCeptHcySB2KAHGAO3nU5g",
+    "name" : "Calendar"
+  },
+  "question" : "Which calendar should I check?",
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 } ]

@@ -1,0 +1,12 @@
+{
+  "exportId" : "YCeptHcySB2KAHGAO3nU5g",
+  "name" : "Calendar",
+  "forcePrivateResponse" : false,
+  "canBeMemoized" : false,
+  "isDataType" : true,
+  "isTest" : false,
+  "dataTypeConfig" : {
+    "fields" : [ ],
+    "usesCode" : true
+  }
+}
