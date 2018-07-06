@@ -1,6 +1,6 @@
 function(events, comment, responseStatus, ellipsis) {
   const callib = require('callib');
-const constants = require('response-constants');
+const constants = require('my-calendar-constants');
 const name = ellipsis.userInfo.fullName;
 
 let eventsArray;

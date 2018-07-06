@@ -1,10 +1,13 @@
-function(calendar, filterOriginal, includeFollowingWeek, ellipsis) {
+function(calendar, filterOriginal, ellipsis) {
   const moment = require('moment-timezone');
 const Formatter = ellipsis.require('ellipsis-cal-date-format@0.1.0');
 const eventlib = require('eventlib');
 const callib = require('callib');
 const filter = filterOriginal.toLowerCase();
 const calendarId = calendar.id;
+const EllipsisApi = ellipsis.require("ellipsis-api@0.1.1");
+const usersApi = new EllipsisApi(ellipsis).users;
+const inspect = require('util').inspect;
 
 let now, min, max, calTz;
 callib.listCal(ellipsis, calendarId, (tz) => {
@@ -12,7 +15,7 @@ callib.listCal(ellipsis, calendarId, (tz) => {
   moment.tz.setDefault(calTz);
   now = moment();
   min = now.clone();
-  max = min.clone().add(includeFollowingWeek ? 2 : 1, 'weeks');
+  max = min.clone().add(2, 'weeks');
   return {
     min: min.toISOString(),
     max: max.toISOString()
@@ -25,35 +28,40 @@ callib.listCal(ellipsis, calendarId, (tz) => {
   });
   if (items.length === 0) {
     ellipsis.success(`There are no events with “${filterOriginal}” in the next week.`)
-  } else if (items.length === 1) {
-    ellipsis.success(`
-**Upcoming event:**
-
-- ${formatEvent(items[0])}
-`);
   } else {
-    ellipsis.success(`
+    processEvents(items).then((processedEvents) => {
+      ellipsis.success(`
 **Upcoming events:**
 
-- ${items.map(formatEvent).join("\n- ")}
+${processedEvents.map(formatEvent).join("")}
 `);
+    });
   }
 });
 
+function processEvents(events) {
+  return Promise.all(events.map((event) => {
+    const title = `${Formatter.formatEventDateTime(event, calTz, null, true)} **${event.summary || "(untitled)"}**`;
+    const attendees = (event.attendees || []).filter((ea) => !ea.organizer && !ea.resource);
+    return Promise.all(attendees.map((attendee) => {
+      return usersApi.findUserByEmail(attendee.email).then((resp) => {
+        const users = resp.users;
+        const user = users ? users[0] : null;
+        const userString = user ?
+              `<@${user.userIdForContext}>` :
+              (attendee.displayName || attendee.email);
+        return userString;
+      });
+    })).then((userStrings) => {
+      return {
+        title: title,
+        users: userStrings.join(", ")
+      };
+    });
+  }));                    
+}
+
 function formatEvent(event) {
-  const title = `${Formatter.formatEventDateTime(event, calTz, null, true)} **${event.summary || "(untitled)"}**`;
-  const attendees = formatAttendees(event);
-  return `${title} — ${attendees}`;
-}
-
-function formatAttendees(event) {
-  const attendees = (event.attendees || []).filter((ea) => !ea.organizer && !ea.resource);
-  return attendees.map(formatAttendee).join(", ");
-}
-
-function formatAttendee(attendee) {
-  const displayName = attendee.displayName || attendee.email;
-  return displayName === attendee.email ?
-    displayName : `${displayName} (${attendee.email})`;
+  return `- ${event.title} - ${event.users}\n`;
 }
 }

@@ -1,7 +1,7 @@
 function(whenToAnnounce, shouldRemind, ellipsis) {
   const gcal = require('google-calendar');
 const cal = new gcal.GoogleCalendar(ellipsis.accessTokens.googleCalendar);
-const EllipsisApi = ellipsis.require('ellipsis-api');
+const EllipsisApi = ellipsis.require("ellipsis-api@0.1.1");
 const api = new EllipsisApi(ellipsis).actions;
 const moment = require('moment-timezone');
 moment.tz.setDefault(ellipsis.userInfo.timeZone || ellipsis.teamInfo.timeZone);
