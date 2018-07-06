@@ -1,4 +1,14 @@
 [ {
+  "exportId" : "9bM-UvfvTSazHaismZcJGw",
+  "name" : "calendar",
+  "paramType" : {
+    "exportId" : "YCeptHcySB2KAHGAO3nU5g",
+    "name" : "Calendar"
+  },
+  "question" : "Which calendar should I check?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
   "exportId" : "BhnzFVOqR4i42wIJh2d3OQ",
   "name" : "comment",
   "paramType" : {
@@ -6,6 +16,16 @@
     "name" : "Text"
   },
   "question" : "Attendance comment",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "CUxt2SDJTBuIg6cM0_yhiQ",
+  "name" : "when",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "When should I schedule this to occur? (e.g. \"every week on Mondays at 8am\")",
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
@@ -19,16 +39,6 @@
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
-  "exportId" : "JNUlcojETbOjaCQB7SIFNA",
-  "name" : "includeFollowingWeek",
-  "paramType" : {
-    "exportId" : "Yes/No",
-    "name" : "Yes/No"
-  },
-  "question" : "Should the following week be included as well (this week and next week)?",
-  "isSavedForTeam" : false,
-  "isSavedForUser" : false
-}, {
   "exportId" : "Py11EiN0Rv2bk99gJgwCIA",
   "name" : "responseStatus",
   "paramType" : {
@@ -36,6 +46,16 @@
     "name" : "Text"
   },
   "question" : "What is the value for `responseStatus`?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "Y118n4kzSHiz4ISkiQL1_w",
+  "name" : "filter",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What keywords should I use as a filter?",
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {

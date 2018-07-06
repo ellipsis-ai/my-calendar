@@ -62,6 +62,6 @@ function processEvents(events) {
 }
 
 function formatEvent(event) {
-  return `- ${event.title} - ${event.users}\n`;
+  return `- ${event.title}${event.users ? " - " + event.users : ""}\n`;
 }
 }
