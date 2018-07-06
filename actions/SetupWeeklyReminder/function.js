@@ -23,7 +23,7 @@ api.unschedule({
   }).then((r) => {
     const recurrenceText = r.scheduled.recurrence;
     const nextRecurrence = r.scheduled.firstRecurrence;
-    const calendarNameText = calendar.label;
+    const calendarNameText = calendar.label.trim();
     const successMessage = `OK! I’ll show you the events with “${filter}” on the **${calendarNameText}** calendar ${recurrenceText} in this channel${
         nextRecurrence ? `, starting ${moment(nextRecurrence).format("dddd, MMMM D LT")}` : ""
       }.`;
