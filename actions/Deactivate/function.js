@@ -1,5 +1,5 @@
 function(ellipsis) {
-  const EllipsisApi = ellipsis.require('ellipsis-api');
+  const EllipsisApi = ellipsis.require("ellipsis-api@0.1.1");
 const api = new EllipsisApi(ellipsis).actions;
 api.unschedule({
   actionName: "Agenda",

@@ -1,9 +1,9 @@
 function(ellipsis) {
   const moment = require('moment-timezone');
-const Formatter = ellipsis.require('ellipsis-cal-date-format@0.0.14');
+const Formatter = ellipsis.require('ellipsis-cal-date-format@0.1.0');
 const eventlib = require('eventlib');
 const calLib = require('callib');
-const EllipsisApi = require('ellipsis-api');
+const EllipsisApi = ellipsis.require("ellipsis-api@0.1.1");
 const actionsApi = new EllipsisApi(ellipsis).actions;
 
 const dayOfWeek = moment().tz(ellipsis.userInfo.timeZone || ellipsis.teamInfo.timeZone).isoWeekday();

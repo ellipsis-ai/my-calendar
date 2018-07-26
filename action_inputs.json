@@ -1,4 +1,14 @@
 [ {
+  "exportId" : "9bM-UvfvTSazHaismZcJGw",
+  "name" : "calendar",
+  "paramType" : {
+    "exportId" : "YCeptHcySB2KAHGAO3nU5g",
+    "name" : "Calendar"
+  },
+  "question" : "Which calendar should I check?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
   "exportId" : "BhnzFVOqR4i42wIJh2d3OQ",
   "name" : "comment",
   "paramType" : {
@@ -6,6 +16,16 @@
     "name" : "Text"
   },
   "question" : "Attendance comment",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "CUxt2SDJTBuIg6cM0_yhiQ",
+  "name" : "when",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "When should I schedule this to occur? (e.g. \"every week on Mondays at 8am\")",
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
@@ -29,6 +49,16 @@
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
+  "exportId" : "Y118n4kzSHiz4ISkiQL1_w",
+  "name" : "filter",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What keywords should I use as a filter?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
   "exportId" : "_lpHYaeKQfqd4Gghk3fhGg",
   "name" : "whenToAnnounce",
   "paramType" : {
@@ -39,23 +69,13 @@
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
-  "exportId" : "aVKMqzD-Tm24fKZ_BdBrsA",
-  "name" : "keywords",
+  "exportId" : "iZNLolNgR8CpJdf3BqBGNw",
+  "name" : "filterOriginal",
   "paramType" : {
     "exportId" : "Text",
     "name" : "Text"
   },
-  "question" : "Filter for what keywords?",
-  "isSavedForTeam" : false,
-  "isSavedForUser" : false
-}, {
-  "exportId" : "eCZBfXRxTVWerQ-Ty3Sdcg",
-  "name" : "",
-  "paramType" : {
-    "exportId" : "Text",
-    "name" : "Text"
-  },
-  "question" : "What is the value for ``?",
+  "question" : "What keywords should I use as a filter?",
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
@@ -66,16 +86,6 @@
     "name" : "Text"
   },
   "question" : "What would you like to say?",
-  "isSavedForTeam" : false,
-  "isSavedForUser" : false
-}, {
-  "exportId" : "q-SNEXFAT4mPRYsKC9mzyg",
-  "name" : "calendarId",
-  "paramType" : {
-    "exportId" : "Text",
-    "name" : "Text"
-  },
-  "question" : "Which calendar ID?",
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
@@ -106,6 +116,16 @@
     "name" : "Yes/No"
   },
   "question" : "Would you like me to send you a reminder before each event begins?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "wd0xwWpISaihzIo5w0ySFA",
+  "name" : "calendar",
+  "paramType" : {
+    "exportId" : "YCeptHcySB2KAHGAO3nU5g",
+    "name" : "Calendar"
+  },
+  "question" : "Which calendar should I check?",
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 } ]
