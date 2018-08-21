@@ -5,27 +5,26 @@ const eventlib = require('eventlib');
 const calLib = require('callib');
 const EllipsisApi = ellipsis.require("ellipsis-api@0.1.1");
 const actionsApi = new EllipsisApi(ellipsis).actions;
+const RandomResponse = require('ellipsis-random-response');
+const timeZone = ellipsis.userInfo.timeZone || ellipsis.teamInfo.timeZone;
+const greetingText = RandomResponse.greetingForTimeZone(timeZone);
+const dayOfWeek = moment().tz(timeZone).isoWeekday();
 
-const dayOfWeek = moment().tz(ellipsis.userInfo.timeZone || ellipsis.teamInfo.timeZone).isoWeekday();
 if (dayOfWeek === 1) {
   actionsApi.say({
-    message: "It’s Monday today, so let’s first look back at last week.\n\n---\n\n"
+    message: `${greetingText}\n\nIt’s Monday today, so let’s look back at last week.\n\n---\n\n`
   }).then(() => {
     return actionsApi.run({
       actionName: "ActivityReport"
     });
   }).then(() => {
-    return actionsApi.say({
-      message: "---\n\nAnd here’s your agenda for today:"
-    })
-  }).then(() => {
-    todaysAgenda();
+    todaysAgenda("\n---\n\nAnd here’s your agenda for today:");
   });
 } else {
-  todaysAgenda();
+  todaysAgenda(`${greetingText}\n\nHere’s your agenda for today:`);
 }
 
-function todaysAgenda() {
+function todaysAgenda(introText) {
   let calTz, now;
   calLib.listPrimaryCal(ellipsis, (tz) => {
     calTz = tz;
@@ -48,7 +47,7 @@ function todaysAgenda() {
       heading = `There are ${items.length} events on your calendar today:`;
     }
     const result = {
-      heading: heading,
+      heading: `${introText}\n\n**${heading}**`,
       items: items.map((event) => {
         return Object.assign({}, event, {
           formattedEvent: Formatter.formatEvent(event, calTz, now.format(Formatter.formats.YMD))
