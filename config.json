@@ -3,7 +3,7 @@
   "exportId" : "9l9tTPMcQliQRua_UmJ8sw",
   "icon" : "⏰",
   "requiredAWSConfigs" : [ ],
-  "requiredOAuth2ApiConfigs" : [ {
+  "requiredOAuthApiConfigs" : [ {
     "exportId" : "aCJZZ3vgS8eU9BAqhxjz6w-RdG2Wm5DR0m2_4FZXf-yKA-googleCalendar",
     "apiId" : "RdG2Wm5DR0m2_4FZXf-yKA",
     "recommendedScope" : "https://www.googleapis.com/auth/calendar",
