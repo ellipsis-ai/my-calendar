@@ -1,7 +1,7 @@
 {
   "exportId" : "V-LAjv1AS4CoFimMANnxpg",
   "name" : "Deactivate",
-  "forcePrivateResponse" : false,
+  "responseTypeId" : "Normal",
   "canBeMemoized" : false,
   "isDataType" : false,
   "isTest" : false

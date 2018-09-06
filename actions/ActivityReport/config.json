@@ -1,7 +1,7 @@
 {
   "exportId" : "VY-CO7xWRUyUt_nFOCKdiA",
   "name" : "ActivityReport",
-  "forcePrivateResponse" : false,
+  "responseTypeId" : "Normal",
   "canBeMemoized" : false,
   "isDataType" : false,
   "isTest" : false

@@ -39,6 +39,16 @@
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
+  "exportId" : "J3BVAv3PSBKypgwGm8uITg",
+  "name" : "daysAhead",
+  "paramType" : {
+    "exportId" : "Number",
+    "name" : "Number"
+  },
+  "question" : "How many days in the future should I look in the calendar for events? (e.g. \"14\" or \"30\")",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
   "exportId" : "Py11EiN0Rv2bk99gJgwCIA",
   "name" : "responseStatus",
   "paramType" : {
@@ -46,6 +56,16 @@
     "name" : "Text"
   },
   "question" : "What is the value for `responseStatus`?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "TFY9F78CTkWKEByHKcpLjw",
+  "name" : "shouldUnschedule",
+  "paramType" : {
+    "exportId" : "Yes/No",
+    "name" : "Yes/No"
+  },
+  "question" : "Would you like me to unschedule any existing reminders in this channel first?",
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
@@ -86,6 +106,16 @@
     "name" : "Text"
   },
   "question" : "What would you like to say?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "qvy5TFCfQo6dNilcOEQCKQ",
+  "name" : "daysAhead",
+  "paramType" : {
+    "exportId" : "Number",
+    "name" : "Number"
+  },
+  "question" : "How many days ahead should I look?",
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
