@@ -1,0 +1,16 @@
+[ {
+  "text" : "events in future",
+  "requiresMention" : true,
+  "isRegex" : false,
+  "caseSensitive" : false
+}, {
+  "text" : "events in future with \"{filterOriginal}\" in {calendar}",
+  "requiresMention" : true,
+  "isRegex" : false,
+  "caseSensitive" : false
+}, {
+  "text" : "events in the next {daysAhead} days with \"{filterOriginal}\" in {calendar}",
+  "requiresMention" : true,
+  "isRegex" : false,
+  "caseSensitive" : false
+} ]

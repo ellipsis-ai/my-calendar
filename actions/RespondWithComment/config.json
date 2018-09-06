@@ -1,7 +1,7 @@
 {
   "exportId" : "yZorPVeMSMGJNDLJV1VEIw",
   "name" : "RespondWithComment",
-  "forcePrivateResponse" : false,
+  "responseTypeId" : "Normal",
   "canBeMemoized" : false,
   "isDataType" : false,
   "isTest" : false

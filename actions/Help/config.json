@@ -1,7 +1,7 @@
 {
   "exportId" : "J0uB9LvZTo6_L-spEBrtqg",
   "name" : "Help",
-  "forcePrivateResponse" : false,
+  "responseTypeId" : "Normal",
   "canBeMemoized" : false,
   "isDataType" : false,
   "isTest" : false

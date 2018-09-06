@@ -1,7 +1,7 @@
 {
   "exportId" : "ioHMv3b3T4utFwwH0cwjLg",
   "name" : "Setup",
-  "forcePrivateResponse" : false,
+  "responseTypeId" : "Normal",
   "canBeMemoized" : false,
   "isDataType" : false,
   "isTest" : false
