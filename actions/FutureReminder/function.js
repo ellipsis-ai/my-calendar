@@ -30,7 +30,7 @@ callib.listCal(ellipsis, calendarId, (tz) => {
   } else {
     processEvents(items).then((processedEvents) => {
       ellipsis.success(`
-**Upcoming events:**
+_Upcoming events:_ **${filterOriginal}**
 
 ${processedEvents.map(formatEvent).join("")}
 `);
