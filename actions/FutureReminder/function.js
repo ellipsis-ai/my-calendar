@@ -8,6 +8,7 @@ const calendarId = calendar.id;
 const EllipsisApi = ellipsis.require("ellipsis-api@0.1.1");
 const usersApi = new EllipsisApi(ellipsis).users;
 const inspect = require('util').inspect;
+const escapeRegex = require('escape-string-regexp');
 let now, min, max, calTz;
 callib.listCal(ellipsis, calendarId, (tz) => {
   calTz = tz;
@@ -29,15 +30,18 @@ callib.listCal(ellipsis, calendarId, (tz) => {
     ellipsis.success(`There are no events with “${filterOriginal}” in the next ${daysAhead} days.`)
   } else {
     const dayGroups = eventlib.groupEventsByDay(items, min, max, calTz);
+    const formatted = eventlib.formatEventsGroupedByDay(dayGroups, filterOriginal);
     ellipsis.success(`
 _Upcoming events:_ **${filterOriginal}**
 
-${dayGroups.map((group) => formatDayGroup(group.date, group.events)).join("\n\n")}
+${formatted}
 `);
   }
 });
 
-function formatDayGroup(dateString, eventTitles) {
-  return `**${moment(dateString).format("dddd M/D")}:** ${eventTitles.join(" • ")}`;
+function formatDayGroup(dateString, eventTitles, filter) {
+  const escapedFilter = escapeRegex(filter);
+  const titlesWithoutFilter = eventTitles.map((ea) => ea.replace(new RegExp(`\\(?\\b${escapedFilter}\\b\\)?:?`), "").replace(/ +/, " ").trim());
+  return `**${dateString}:** ${titlesWithoutFilter.join(", ")}`;
 }
 }

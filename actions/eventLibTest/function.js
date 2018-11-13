@@ -4,9 +4,9 @@ const test = require('tape');
 const moment = require('moment-timezone');
 test.onFailure(ellipsis.error);
 test.onFinish(() => ellipsis.success("All passed!"));
-
+const groups = eventlib.groupEventsByDay(getEvents(), moment('2018-11-01'), moment('2019-03-01'), 'UTC');
+const formatted = eventlib.formatEventsGroupedByDay(groups, "day")
 test('groupEventsByDay', (t) => {
-  const groups = eventlib.groupEventsByDay(getEvents(), moment('2018-11-01'), moment('2019-03-01'), 'UTC');
   t.deepEqual(groups, [{
     date: "2018-11-05",
     events: ['Extended holidays']
@@ -29,6 +29,20 @@ test('groupEventsByDay', (t) => {
     date: "2019-02-02",
     events: ["Groundhog Day"]
   }], "Groups contain the expected events");
+  t.end();
+});
+
+test('formatEventsGroupedByDay', (t) => {
+  t.equal(formatted, 
+`**Monday 11/5 to Wednesday 11/7:** Extended holidays
+
+**Wednesday 12/26:** Boxing (regional holiday)
+
+**Tuesday 1/1:** New Year's, Ice skating
+
+**Wednesday 1/2:** Ice skating, After New Year’s Day (Quebec)
+
+**Saturday 2/2:** Groundhog`, "Formatting clusters events as expected");
   t.end();
 });
 
