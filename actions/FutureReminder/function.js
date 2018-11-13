@@ -28,39 +28,16 @@ callib.listCal(ellipsis, calendarId, (tz) => {
   if (items.length === 0) {
     ellipsis.success(`There are no events with “${filterOriginal}” in the next ${daysAhead} days.`)
   } else {
-    processEvents(items).then((processedEvents) => {
-      ellipsis.success(`
+    const dayGroups = eventlib.groupEventsByDay(items, min, max, calTz);
+    ellipsis.success(`
 _Upcoming events:_ **${filterOriginal}**
 
-${processedEvents.map(formatEvent).join("")}
+${dayGroups.map((group) => formatDayGroup(group.date, group.events)).join("\n\n")}
 `);
-    });
   }
 });
 
-function processEvents(events) {
-  return Promise.all(events.map((event) => {
-    const title = `${Formatter.formatEventDateTime(event, calTz, null, true)} **${event.summary || "(untitled)"}**`;
-    const attendees = (event.attendees || []).filter((ea) => !ea.organizer && !ea.resource);
-    return Promise.all(attendees.map((attendee) => {
-      return usersApi.findUserByEmail(attendee.email).then((resp) => {
-        const users = resp.users;
-        const user = users ? users[0] : null;
-        const userString = user ?
-              `<@${user.userIdForContext}>` :
-              (attendee.displayName || attendee.email);
-        return userString;
-      });
-    })).then((userStrings) => {
-      return {
-        title: title,
-        users: userStrings.join(", ")
-      };
-    });
-  }));                    
-}
-
-function formatEvent(event) {
-  return `- ${event.title}${event.users ? " - " + event.users : ""}\n`;
+function formatDayGroup(dateString, eventTitles) {
+  return `**${moment(dateString).format("dddd M/D")}:** ${eventTitles.join(" • ")}`;
 }
 }
