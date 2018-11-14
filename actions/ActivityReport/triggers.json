@@ -2,5 +2,6 @@
   "text" : "my calendar activity report",
   "requiresMention" : true,
   "isRegex" : false,
-  "caseSensitive" : false
+  "caseSensitive" : false,
+  "triggerType" : "MessageSent"
 } ]
