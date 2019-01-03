@@ -32,7 +32,7 @@ callib.listCal(ellipsis, calendarId, (tz) => {
     const dayGroups = eventlib.groupEventsByDay(items, min, max, calTz);
     const formatted = eventlib.formatEventsGroupedByDay(dayGroups, filterOriginal);
     ellipsis.success(`
-_Upcoming events:_ **${filterOriginal}**
+**_Upcoming events:_ ${filterOriginal}**
 
 ${formatted}
 `);
